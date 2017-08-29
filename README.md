@@ -1,3 +1,3 @@
-Advanced Software Enginerring - Fall 2017\n
+Advanced Software Enginerring - Fall 2017
 
 This repository contains the lab assigments
