@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Regy - Bootstrap Registration Landing Page</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,700">
+    <link rel="stylesheet" href="regy-register-landing-page/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="regy-register-landing-page/assets/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="regy-register-landing-page/assets/css/animate.css">
+    <link rel="stylesheet" href="regy-register-landing-page/assets/css/style.css">
+    <link rel="stylesheet" href="regy-register-landing-page/assets/css/media-queries.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicon and touch icons -->
+    <link rel="shortcut icon" href="regy-register-landing-page/assets/ico/favicon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="regy-register-landing-page/assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="regy-register-landing-page/assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="regy-register-landing-page/assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="regy-register-landing-page/assets/ico/apple-touch-icon-57-precomposed.png">
+
+    <script type="text/javascript">
+        var valid = false;
+        function validate() {
+            var msg = "";
+            var fname = document.myForm.fname.value;
+            var lname = document.myForm.lname.value;
+            var email = document.myForm.email.value;
+            var user = document.myForm.user.value;
+            var pwd = document.myForm.pwd.value;
+            var repwd = document.myForm.repwd.value;
+            if (fname.length == 0 && lname.length == 0 && email.length == 0 && user.length == 0 && pwd.length == 0 && repwd.length == 0)
+                msg = msg + "Please enter all the fields to have successful registration \n";
+            if (msg.length > 0) {
+                window.alert(msg);
+                valid = false;
+            }
+            else
+                valid = true;
+            return valid;
+        }
+    </script>
+
+</head>
+
+<body>
+
+<div class="top-content">
+<h1 align="center">Traffic Updater</h1>
+    <div class="inner-bg">
+        <div class="container">
+
+
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3 r-form-1-box wow fadeInUp">
+                    <div class="r-form-1-top">
+                        <div class="r-form-1-top-left">
+                            <h3>Sign up now</h3>
+                            <p>Fill in the form below to get instant access:</p>
+                        </div>
+                        <div class="r-form-1-top-right">
+                            <i class="fa fa-pencil"></i>
+                        </div>
+                    </div>
+                    <div class="r-form-1-bottom">
+                        <form role="form" name="myForm" onsubmit="return validate()" method="post" class="registration-form" action="home.html">
+                            <div class="form-group">
+                                <label class="sr-only">First name</label>
+                                <input type="text" name="fname" placeholder="First name..." class="r-form-1-first-name form-control" id="fname">
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only">Last name</label>
+                                <input type="text" name="lname" placeholder="Last name..." class="r-form-1-last-name form-control" id="lname">
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only">Email</label>
+                                <input type="text" name="email" placeholder="Email..." class="r-form-1-email form-control" id="email">
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only">UserName</label>
+                                <input type="text" name="user" placeholder="UserName..." class="r-form-1-user form-control" id="user">
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only">Password</label>
+                                <input type="password" name="pwd" placeholder="Password..." class="r-form-1-pwd form-control" id="pwd">
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only">Retype Password</label>
+                                <input type="password" name="repwd" placeholder="Retype Password..." class="r-form-1-repwd form-control" id="repwd">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-xl page-scroll">Sign me up!</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Javascript -->
+    <script src="regy-register-landing-page/assets/js/jquery-1.11.1.min.js"></script>
+    <script src="regy-register-landing-page/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="regy-register-landing-page/assets/js/jquery.backstretch.min.js"></script>
+    <script src="regy-register-landing-page/assets/js/wow.min.js"></script>
+    <script src="regy-register-landing-page/assets/js/retina-1.1.0.min.js"></script>
+    <script src="regy-register-landing-page/assets/js/scripts.js"></script>
+
+    <!--[if lt IE 10]>
+    <script src="regy-register-landing-page/assets/js/placeholder.js"></script>
+    <![endif]-->
+
+</body>
+
+</html>

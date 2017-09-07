@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Login Form Template</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.1/angular.min.js"
+            type="application/javascript"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+    <link rel="stylesheet" href="form-3/assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="form-3/assets/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="form-3/assets/css/form-elements.css">
+    <link rel="stylesheet" href="form-3/assets/css/style.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicon and touch icons -->
+    <link rel="shortcut icon" href="form-3/assets/ico/favicon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="form-3/assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="form-3/assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="form-3/assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="form-3/assets/ico/apple-touch-icon-57-precomposed.png">
+    <script type="text/javascript">
+        var valid = false;
+        function validate() {
+            var msg = "";
+            var uname = document.myForm.userName.value;
+            var pwd = document.myForm.pwd.value;
+            if (uname.length == 0 && pwd.length == 0)
+                msg = msg + "Please enter username and password \n";
+            else if (pwd.length == 0)
+                msg = msg + "Please enter password \n";
+            else if (uname.length == 0)
+                msg = msg + "Please enter username \n";
+            if (msg.length > 0) {
+                window.alert(msg);
+                valid = false;
+            }
+            else
+                valid = true;
+            return valid;
+        }
+    </script>
+
+</head>
+<h1 align="center">Traffic Updater</h1>
+<body ng-app ng-controller="LoginController" class="about">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3 form-box">
+                    <div class="form-module">
+                    <div class="form-top">
+                        <div class="form-top-left">
+                            <h3>Login to our site</h3>
+                            <p>Enter your username and password to log on:</p>
+                        </div>
+                        <div class="form-top-right">
+                            <i class="fa fa-lock"></i>
+                        </div>
+                    </div>
+                    <div class="form-bottom">
+                        <form role="form" name="myForm" onsubmit="return validate()" method="post" class="login-form" action="home.html">
+                            <div class="form-group">
+                                <label class="sr-only">Username</label>
+                                <input ng-model="user.firstName" type="text" placeholder="Username..." class="form-username form-control" name="userName">
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only">Password</label>
+                                <input ng-model="user.pwd" type="password" placeholder="Password..." class="form-password form-control" name="pwd">
+                            </div>
+                            <button type="submit" ng-click="login(user.firstName,user.pwd)" value="Sign in" class="btn">Sign in!
+                            </button>
+                        <br>
+                        <p>Not yet Member? <a href="Register.html"> <b>Click here to register</b></a></p>
+                        </form>
+                    </div>
+                    <a href="index.html"> <u><b>Back to home page</b></u></a>
+                </div>
+                </div>
+            </div>
+
+        </div>
+
+
+<!-- Javascript -->
+<script src="form-3/assets/js/jquery-1.11.1.js"></script>
+<script src="form-3/assets/bootstrap/js/bootstrap.js"></script>
+<script src="form-3/assets/js/jquery.backstretch.js"></script>
+<script src="form-3/assets/js/scripts.js"></script>
+<script src="form-3/assets/js/placeholder.js"></script>
+        <script>
+            function LoginController($scope) {
+                $scope.logins = [];
+                $scope.login = function (user, pwd) {
+                    localStorage.setItem("password", pwd);
+                    localStorage.setItem("username", user);
+                    $scope.logins.push(localStorage.getItem("name") + " was logged in.");
+                };
+            }
+        </script>
+
+</body>
+
+</html>
