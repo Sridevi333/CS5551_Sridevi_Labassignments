@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="" data-ng-app="GoogleDirection">
+<head>
+    <title>MashUp Application</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Awesome videos!" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/stylesheet.css">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+
+    <style>
+        /* Optional: Makes the sample page fill the window. */
+        #description {
+            font-family: Roboto;
+            font-size: 15px;
+            font-weight: 300;
+        }
+        #infowindow-content .title {
+            font-weight: bold;
+        }
+        #infowindow-content {
+            display: none;
+        }
+        .pac-card {
+            margin: 10px 10px 0 0;
+            border-radius: 2px 0 0 2px;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            outline: none;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            background-color: #fff;
+            font-family: Roboto;
+        }
+        #pac-container {
+            padding-bottom: 12px;
+            margin-right: 12px;
+        }
+        .pac-controls {
+            display: inline-block;
+            padding: 5px 11px;
+        }
+        .pac-controls label {
+            font-family: Roboto;
+            font-size: 13px;
+            font-weight: 300;
+        }
+        #pac-input {
+            background-color: #fff;
+            font-family: Roboto;
+            font-size: 15px;
+            font-weight: 300;
+            margin-left: 12px;
+            padding: 0 11px 0 13px;
+            text-overflow: ellipsis;
+            width: 400px;
+        }
+        #pac-input:focus {
+            border-color: #4d90fe;
+        }
+        #title {
+            color: #fff;
+            background-color: #4d90fe;
+            font-size: 25px;
+            font-weight: 500;
+            padding: 6px 12px;
+        }
+        .header h1 {
+            font-size: 2.5em;
+            font-weight: 100;
+            text-align: center;
+            color: #ffffff;
+        }
+        .col2 {
+            overflow: hidden;
+            float: center;
+            width: 58%;
+            left: 1%;
+        }
+        .btn {
+            background-color: #de615e;
+            padding: 14px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 3px;
+            cursor: pointer;
+            border-radius: 3px;
+            border: none;
+            color: white;
+        }
+        .col1 {
+            overflow: hidden;
+            float: center;
+            text-align: left;
+            width: 20%;
+            left: 10%;
+            background-color: whitesmoke;
+        }
+        .dropdown-content {
+            background-color: #de615e;
+            min-width: 160px;
+            padding: 12px 16px;
+            color: white;
+        }
+        #outerdiv {
+            width: 90%;
+            height: 90%;
+            position:fixed;
+            text-align:center;
+        }
+        html,body{
+            background-image: url("img.jpg");
+        }
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="app.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=init"></script>
+    <script src="translate.js"></script>
+</head>
+
+<body ng-app="Translate">
+<div class="header"><h1>MashUp Application</h1></div>
+<div ng-controller="Translatecontroller">
+    <div class="row" align="center">
+        <form action="#">
+            <input type="text" id="pac-input" placeholder="Search Videos" class="form-control">
+            <button class="btn">Search</button>
+            <select name="to" id="lang" class="dropdown-content">
+                <option selected disabled>Choose a language to translate</option>
+                <option value="zh">Chinese </option>
+                <option value="hi">Hindi</option>
+                <option value="ar">Arabic</option>
+                <option value="te">Telugu</option>
+            </select>
+                    <button class="btn" ng-click="translate()" >Click here to translate</button>
+                <p><h4><b>Translated word:&nbsp&nbsp{{output}}</b></h4></p>
+            <div class="col2">
+                <div id="results"></div>
+            </div>
+        </form>
+
+</div>
+</body>
+</html>

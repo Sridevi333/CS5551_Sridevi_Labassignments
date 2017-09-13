@@ -1,0 +1,19 @@
+header { margin-top: 30px; }
+header a { color: #fff; text-decoration: none; }
+header a:hover { text-decoration: none; }
+form { margin-top: 20px; }
+form, #results { padding: 0 50px; }
+.item { margin-bottom: 25px; }
+.w100 { width: 100%; }
+body {
+    background-image: url("assets/img/backgrounds/1.jpg");
+}
+h2 {
+    margin-top: 10px;
+    font-size: 1.5em;
+    font-weight: 400;
+    color: #e9ecef;
+    line-height: 50px;
+}
+.btn-primary { background: #de615e; border-color: #de615e; }
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus { background: #de615e;  border-color: #de615e; }
