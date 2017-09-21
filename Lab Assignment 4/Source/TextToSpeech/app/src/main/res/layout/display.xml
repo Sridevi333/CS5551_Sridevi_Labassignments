@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background = "@drawable/image1"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="112dp"
+        android:hint="Enter the text "/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Speak"
+        android:id="@+id/bspeak"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="doSomething"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stop"
+        android:id="@+id/bstopspeaking"
+        android:layout_below="@+id/bspeak"
+        android:layout_marginTop="62dp"
+        android:layout_alignLeft="@+id/bspeak"
+        android:layout_alignStart="@+id/bspeak"
+        android:layout_alignRight="@+id/bspeak"
+        android:layout_alignEnd="@+id/bspeak"
+        android:onClick="doSomething"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        android:id="@+id/Blogout"
+        android:onClick="onC"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+</RelativeLayout>
