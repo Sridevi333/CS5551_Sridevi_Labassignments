@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Product Finder</string>
+    <string name="clarifai_api_key">f8165ac44bbb4935aa1c6fb1b16f3ee2</string>
+    <string name="error_external_storage_permission_not_granted">You must accept this permission so we can upload your images!</string>
+
+    <string name="error_while_contacting_api">Error while contacting Clarifai API</string>
+    <string name="no_results_from_api">API did not return any results</string>
+</resources>
