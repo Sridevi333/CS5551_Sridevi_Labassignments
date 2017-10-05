@@ -1,0 +1,8 @@
+{
+  "name": "lab5",
+  "app_id": "",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic1"
+}

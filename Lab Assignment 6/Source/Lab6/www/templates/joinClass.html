@@ -1,0 +1,37 @@
+<ion-view title="Find A Place" id="page4">
+    <ion-content padding="true" style="background: url(img/homepagepic.jpg) no-repeat center;background-size:cover;" class="has-header">
+        <form id="joinClass-form4" class="list">
+            <h4 style="color:#252526">Enter your city</h4>
+                <label class="item item-input" id="joinClass-input2">
+                <input id="placeName" type="text" placeholder="">
+            </label>
+            <h4 style="color:#252526">Enter your interest</h4>
+                            <select id="interestName" style="background-color: #387ef5;min-width: 160px;padding: 12px 16px;color: white;">
+                    <option selected>Italian</option>
+                    <option >Pizza</option>
+					<option>Burger</option>
+					<option>Taco</option>
+					<option>Indian</option>
+					</select>
+
+        </form>
+        <button id="joinClass-button6" class="button button-positive  button-block" ng-click="getVenues()" >Go</button>
+        <ion-list>
+      <ion-item ng-repeat="i in venueList" type="item-text-wrap" style="font-size: x-large; color: #5e5e5e; text-align: center; list-style: none; list-style-position:inside;" >
+             <a style="font-size: x-large; color: #5e5e5e; text-align: center;" ng-click="getReviews(i)">{{i.name}}</a>
+        </ion-item>
+    </ion-list>
+        <div id="listView">
+        <p ng-model="ReviewWithSentiment">
+
+          <TABLE BORDER=2 CELLPADDING=4> <TR> <TH style="color:red;" COLSPAN=2><b>Sentiment Analysis Using uclarify API</b> </TH> </TR>
+          <br>
+          <TR> <TD style="color: blue;"><b>Most recent review :</b></TD> <TD><b>{{ReviewWithSentiment.reviewText}}</b></TD> </TR>
+<!--                <TR> <TD style="color: blue;">Sentiment of the review</TD> <TD>{{ReviewWithSentiment.sentiment}}</TD> </TR>-->
+          <TR> <TD style="color: blue;"><b> positive:</b></TD> <TD><b>{{ReviewWithSentiment.score}}<b></TD> </TR>
+          <TR> <TD style="color: blue;"><b> negative:</b></TD> <TD><b>0.2613891</b></TD> </TR>
+<!--                <TR> <TH style="color: aliceblue;" COLSPAN=2 BGCOLOR="#445553">{{ReviewWithSentiment.reviewText}}</TH> </TR>-->
+            </TABLE>
+        </div>
+    </ion-content>
+</ion-view>
