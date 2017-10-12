@@ -1,0 +1,23 @@
+<ion-view title="Login" id="page1">
+    <ion-content padding="true" style="background: url(img/homepagepic.jpg) no-repeat center;background-size:cover;" class="has-header">
+        <form id="login-form2" class="list">
+            <label class="item item-input" id="login-textarea1">
+                 <span class="input-label">Email Id</span>
+                    <input type="text" placeholder="">
+            </label>
+            <label class="item item-input" id="login-textarea2">
+                <span class="input-label">Password</span>
+                    <input type="password" placeholder="">
+            </label>
+        </form>
+        <a ui-sref="joinClass" id="login-button1" class="button button-positive  button-block">Login</a>
+<!--        <a ui-sref="home" id="login-button3" class="button button-positive  button-block">Login with facebook</a>-->
+        <a ui-sref="signup" id="login-button2" class="button button-positive  button-block">Register</a>
+      <div class="padding">
+        <!-- <button class="button button-full button-positive ink" ng-click="validateUser()">Login</button> -->
+        <!-- <button class="button button-full button-positive ink" ng-click="logoutUser()">Logout</button> -->
+        <button class="button button-full icon-left ion-social-facebook button-positive-900 ink" ng-click="oauthLogin('facebook')">Login with facebook</button>
+
+      </div>
+    </ion-content>
+</ion-view>
