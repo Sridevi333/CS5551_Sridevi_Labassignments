@@ -1,0 +1,150 @@
+
+.bgg{
+
+
+    font-family: 'Roboto', sans-serif;
+    text-decoration-color: aliceblue;
+    color: aliceblue;
+    align-content: center;
+    font-size: 10px;
+}
+#info {
+    font-size: 30px;
+}
+#div_start {
+    float: right;
+}
+#headline {
+    text-decoration: none
+}
+#results {
+    font-size: 20px;
+    font-weight: bold;
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: left;
+    min-height: 150px;
+    color: white;
+}
+#start_button {
+    border: 0;
+    background-color:transparent;
+    padding: 0;
+}
+
+.final {
+    color: black;
+    padding-right: 3px;
+}
+.button {
+    display: none;
+}
+.marquee {
+    margin: 20px auto;
+}
+
+#buttons {
+    margin: 10px 0;
+    position: relative;
+    top: -50px;
+}
+
+#copy {
+    margin-top: 20px;
+}
+
+#copy > div {
+    display: none;
+    margin: 0 70px;
+}
+
+a.c1 {font-weight: normal;}
+.table1{
+    font-size: 15px;
+    color: blue;
+    font-family: 'Roboto', sans-serif ;
+    background-color: #ffffff;
+}
+.tb1{
+    color: black;
+    border-collapse: collapse;
+    background-color: #ffffff;
+}
+.myedit{
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    color: #90ffee;
+}
+.btn-primary{
+    margin-bottom: 10px;
+}
+h2.h22{
+    float: right;
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+}
+#top {
+    top: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    padding-top: 30px;
+    font-size: large;
+}
+#caption {
+    padding-left: 60%;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    font-size: medium;
+}
+#main-top {
+    top: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    width: 50%;
+    height: 150px;
+    font-size: large;
+    margin: 0 auto;
+}
+#sentiment {
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+    width: 50%;
+    height: 150px;
+    font-size: xx-small;
+    padding-top: 7%;
+}
+
+button.btn {
+    height: 50px;
+    margin: 0;
+    padding: 0 20px;
+    vertical-align: middle;
+    background: #4551de;
+    border: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 50px;
+    color: #ffffff;
+    -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
+    text-shadow: none;
+    -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
+    -o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
+}
+
+button.btn:hover { opacity: 0.6; color: #fff; }
+
+button.btn:active { outline: 0; opacity: 0.6; color: #fff; -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none; }
+
+button.btn:focus { outline: 0; opacity: 0.6; background: #de615e; color: #fff; }
+
+button.btn:active:focus, button.btn.active:focus { outline: 0; opacity: 0.6; background: #de615e; color: #fff; }
+#sentiment-button1 {
+    margin: 0 auto;
+    padding-left: 38%
+}
+#sentiment-button2 {
+    margin: 0 auto;
+    padding-right: 38%
+}
