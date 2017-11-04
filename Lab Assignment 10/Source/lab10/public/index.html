@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html class="no-js consumer" lang="en">
+<head>
+	<title>Mashup Application</title>
+	<link href="https://plus.google.com/100585555255542998765" rel="publisher">
+	<link href="//www.google.com/images/icons/product/chrome-32.jpg" rel="icon" type="image/ico">
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin" rel=
+			"stylesheet">
+	<style>
+		body{
+			background:url('https://s-media-cache-ak0.pinimg.com/originals/cd/9d/d0/cd9dd0a040a45dd307d7992bcc73d716.jpg');
+			background-size:cover;
+		}
+		.start_img{
+			background: url("microphone.jpg");
+		}
+
+		.bgg{
+			/*background-color: brown;*/
+
+			font-family: 'Roboto', sans-serif;
+			text-decoration-color: aliceblue;
+			color: aliceblue;
+			align-content: center;
+			font-size: 10px;
+		}
+		#info {
+			font-size: 30px;
+		}
+		#div_start {
+			float: right;
+		}
+		#headline {
+			text-decoration: none
+		}
+		#results {
+			font-size: 20px;
+			font-weight: bold;
+			border: 1px solid #ddd;
+			padding: 15px;
+			text-align: left;
+			min-height: 150px;
+			color: white;
+		}
+		#start_button {
+			border: 0;
+			background-color:transparent;
+			padding: 0;
+
+		}
+
+		.final {
+			color: black;
+			padding-right: 3px;
+		}
+		.button {
+			display: none;
+		}
+		.marquee {
+			margin: 20px auto;
+		}
+
+		#buttons {
+			margin: 10px 0;
+			position: relative;
+			top: -50px;
+		}
+
+		#copy {
+			margin-top: 20px;
+		}
+
+		#copy > div {
+			display: none;
+			margin: 0 70px;
+		}
+
+		a.c1 {font-weight: normal;}
+		.table1{
+			font-size: 15px;
+			color: blue;
+			font-family: 'Roboto', sans-serif ;
+			background-color: #ffffff;
+		}
+		.tb1{
+			color: black;
+			border-collapse: collapse;
+			background-color: #ffffff;
+		}
+		.myedit{
+			font-size: 15px;
+			font-family: 'Roboto', sans-serif;
+			color: #90ffee;
+		}
+		.btn-primary{
+			margin-bottom: 10px;
+		}
+		h2.h22{
+			float: right;
+			font-size: 25px;
+			font-family: 'Roboto', sans-serif;
+			font-weight: normal;
+		}
+		#top {
+			top: 0;
+			font-family: 'Roboto', sans-serif;
+			color: #ffffff;
+			padding-top: 30px;
+			font-size: large;
+		}
+		#caption {
+			padding-left: 60%;
+			font-family: 'Roboto', sans-serif;
+			color: #ffffff;
+			font-size: medium;
+		}
+		#main-top {
+			top: 0;
+			font-family: 'Roboto', sans-serif;
+			color: #ffffff;
+			width: 50%;
+			height: 150px;
+			font-size: large;
+			margin: 0 auto;
+		}
+		#sentiment {
+			margin: 0 auto;
+			font-family: 'Roboto', sans-serif;
+			width: 50%;
+			height: 150px;
+			font-size: xx-small;
+			padding-top: 7%;
+		}
+
+		button.btn {
+			height: 50px;
+			margin: 0;
+			padding: 0 20px;
+			vertical-align: middle;
+			background: #4551de;
+			border: 0;
+			font-family: 'Roboto', sans-serif;
+			font-size: 16px;
+			font-weight: 300;
+			line-height: 50px;
+			color: #ffffff;
+			-moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
+			text-shadow: none;
+			-moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
+			-o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
+		}
+
+		button.btn:hover { opacity: 0.6; color: #fff; }
+
+		button.btn:active { outline: 0; opacity: 0.6; color: #fff; -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none; }
+
+		button.btn:focus { outline: 0; opacity: 0.6; background: #de615e; color: #fff; }
+
+		button.btn:active:focus, button.btn.active:focus { outline: 0; opacity: 0.6; background: #de615e; color: #fff; }
+		#sentiment-button {
+			margin: 0 auto;
+			padding-left: 38%
+		}
+	</style>
+	<script src="//www.google.com/js/gweb/analytics/autotrack.js">
+	</script>
+	<script>
+        new gweb.analytics.AutoTrack({
+            profile: 'UA-26908291-1'
+        });
+
+	</script>
+	<link rel="stylesheet" type="text/css" href="../app.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+	<script src="js/app.js"></script>
+</head>
+<body style="background: url('https://s-media-cache-ak0.pinimg.com/originals/cd/9d/d0/cd9dd0a040a45dd307d7992bcc73d716.jpg')" class="bgg" ng-app="Sentiment">
+<div class="browser-landing" id="main">
+	<div id="top">
+		<h1 align="center" style="color:black">Mashup Application with Private REST service</h1>
+	</div>
+
+	<div id="main-top">
+
+		<div class="myedit">
+			<div class="compact marquee">
+				<div id="info">
+					<p id="info_start" style="font-size: 20px;color: red">
+						Click on button to record Speech.
+					</p>
+					<p id="info_speak_now" style="display:none;font-size: 20px;color: blue">
+						Speak now.
+					</p>
+					<p id="info_no_speech" style="display:none;font-size: 20px;color: blue">
+						No speech was detected. You may need to adjust your microphone.
+					</p>
+					<p id="info_no_microphone" style="display:none;font-size: 20px;color: blue">
+						No microphone was found. Ensure that a microphone is installed and that microphone settings are configured correctly.
+					</p>
+					<p id="info_allow" style="display:none;font-size: 20px;color: blue">
+						Click the "Allow" button above to enable your microphone.
+					</p>
+					<p id="info_denied" style="display:none;font-size: 20px;color: blue">
+						Permission to use microphone was denied.
+					</p>
+					<p id="info_blocked" style="display:none;font-size: 20px;color: blue">
+						Permission to use microphone is blocked. To change, go to
+						chrome://settings/contentExceptions#media-stream
+					</p>
+					<p id="info_upgrade" style="display:none;font-size: 20px;color: blue">
+						Web Speech API is not supported by this browser. Upgrade to <a href="//www.google.com/chrome">Chrome</a> version 25 or later.
+					</p>
+				</div>
+				<div id="div_start">
+					<button id="start_button" onclick="startButton(event)"><img alt="Start" id="start_img" src="microphone.jpg"></button>
+				</div>
+				<div id="results">
+					<span class="final" id="final_span"></span> <span class="interim" id=
+						"interim_span"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div><script src="/intl/en/chrome/assets/common/js/chrome.min.js">
+</script> <script>
+    var chrmMenuBar = new chrm.ui.MenuBar();
+    chrmMenuBar.decorate('nav');
+    var chrmLogo = new chrm.ui.Logo('logo');
+    var chrmscroll = new chrm.ui.SmoothScroll('scroll');
+    chrmscroll.init();
+    window.___gcfg = { lang: 'en' };
+    (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+    var doubleTracker = new gweb.analytics.DoubleTrack('floodlight', {
+        src: 2542116,
+        type: 'clien612',
+        cat: 'chrom0'
+    });
+    doubleTracker.track();
+    doubleTracker.trackClass('doubletrack', true);
+</script> <script>
+    var create_email = false;
+    var final_transcript = '';
+    var recognizing = false;
+    var ignore_onend;
+    var start_timestamp;
+    if (!('webkitSpeechRecognition' in window)) {
+        upgrade();
+    } else {
+        start_button.style.display = 'inline-block';
+        var recognition = new webkitSpeechRecognition();
+        recognition.continuous = true;
+        recognition.interimResults = true;
+        recognition.onstart = function() {
+            recognizing = true;
+            showInfo('info_speak_now');
+            start_img.src = 'microphone.jpg';
+        };
+        recognition.onerror = function(event) {
+            if (event.error == 'no-speech') {
+                start_img.src = 'microphone.jpg';
+                showInfo('info_no_speech');
+                ignore_onend = true;
+            }
+            if (event.error == 'audio-capture') {
+                start_img.src = 'microphone.jpg';
+                showInfo('info_no_microphone');
+                ignore_onend = true;
+            }
+            if (event.error == 'not-allowed') {
+                if (event.timeStamp - start_timestamp < 100) {
+                    showInfo('info_blocked');
+                } else {
+                    showInfo('info_denied');
+                }
+                ignore_onend = true;
+            }
+        };
+        recognition.onend = function() {
+            recognizing = false;
+            if (ignore_onend) {
+                return;
+            }
+            start_img.src = 'microphone.jpg';
+            if (!final_transcript) {
+                showInfo('info_start');
+                return;
+            }
+            showInfo('');
+            if (window.getSelection) {
+                window.getSelection().removeAllRanges();
+                var range = document.createRange();
+                range.selectNode(document.getElementById('final_span'));
+                window.getSelection().addRange(range);
+            }
+            if (create_email) {
+                create_email = false;
+                createEmail();
+            }
+        };
+        recognition.onresult = function(event) {
+            var interim_transcript = '';
+            if (typeof(event.results) == 'undefined') {
+                recognition.onend = null;
+                recognition.stop();
+                upgrade();
+                return;
+            }
+            for (var i = event.resultIndex; i < event.results.length; ++i) {
+                if (event.results[i].isFinal) {
+                    final_transcript += event.results[i][0].transcript;
+                } else {
+                    interim_transcript += event.results[i][0].transcript;
+                }
+            }
+            final_transcript = capitalize(final_transcript);
+            final_span.innerHTML = linebreak(final_transcript);
+            interim_span.innerHTML = linebreak(interim_transcript);
+            if (final_transcript || interim_transcript) {
+                showButtons('inline-block');
+            }
+        };
+    }
+    function copyButton() {
+        if (recognizing) {
+            recognizing = false;
+            recognition.stop();
+        }
+        copy_button.style.display = 'none';
+        copy_info.style.display = 'inline-block';
+        showInfo('');
+    }
+    function upgrade() {
+
+        showInfo('info_upgrade');
+    }
+    var two_line = /\n\n/g;
+    var one_line = /\n/g;
+    function linebreak(s) {
+        return s.replace(two_line, '<p></p>').replace(one_line, '<br>');
+    }
+    var first_char = /\S/;
+    function capitalize(s) {
+        return s.replace(first_char, function(m) { return m.toUpperCase(); });
+    }
+    function startButton(event) {
+        if (recognizing) {
+            recognition.stop();
+            return;
+        }
+        final_transcript = '';
+        recognition.lang = "english";
+        recognition.start();
+        ignore_onend = false;
+        final_span.innerHTML = '';
+        interim_span.innerHTML = '';
+        start_img.src = 'microphone.jpg';
+        showInfo('info_allow');
+        showButtons('none');
+        start_timestamp = event.timeStamp;
+    }
+    function showInfo(s) {
+        if (s) {
+            for (var child = info.firstChild; child; child = child.nextSibling) {
+                if (child.style) {
+                    child.style.display = child.id == s ? 'inline' : 'none';
+                }
+            }
+            info.style.visibility = 'visible';
+        } else {
+            info.style.visibility = 'hidden';
+        }
+    }
+    var current_style;
+    function showButtons(style) {
+        if (style == current_style) {
+            return;
+        }
+        current_style = style;
+        copy_button.style.display = style;
+        email_button.style.display = style;
+        copy_info.style.display = 'none';
+        email_info.style.display = 'none';
+    }
+</script>
+
+<div ng-controller="Sentimentctrl" id="sentiment">
+	<div id="sentiment-button">
+		<button class="btn btn-primary" ng-click="findSentiment()">Click here for Sentiment Analysis</button>
+
+	</div>
+	<div id="div_List" style="display:none;font-size: 20px;>
+        <div class="table1">
+	<p ng-model="Sentimentwithlang">
+	<TABLE class="tb1" BORDER=1 CELLPADDING=2 style="width:100%">
+		<TR> <TH style="color: red" COLSPAN=2>Sentiment Analysis Using Alchemy API </TH> </TR>
+		<TR style="font-size:medium"> <TD>Sentiment of the text</TD> <TD>{{Sentimentwithlang.sentiment}}</TD> </TR>
+		<TR style="font-size:medium"> <TD>Sentiment Score of the text</TD> <TD>{{Sentimentwithlang.score}}</TD> </TR>
+		<TR style="font-size:medium"> <TD>Language of the text</TD> <TD>{{Sentimentwithlang.language}}</TD> </TR>
+		<!--<TR> <TH style="color: aliceblue; background:lightyellow" COLSPAN=2 BGCOLOR="">{{reviewText}}</TH> </TR>-->
+	</TABLE>
+	</p>
+</div>
+</div>
+</div>
+</body>
+</html>
